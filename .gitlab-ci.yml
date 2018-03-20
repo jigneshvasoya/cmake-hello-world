@@ -1,0 +1,15 @@
+artifacts:
+  paths:
+  - build/cmake-hello_0.0.1-1_amd64.deb
+
+image: gitlab:builder
+
+#services:
+#  - postgres:9.3
+
+before_script:
+  - docker inspect gitlab:builder || docker build --rm -t gitlab:builder .
+
+test:
+  script:
+  - ./build.sh
