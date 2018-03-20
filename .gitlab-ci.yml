@@ -1,7 +1,3 @@
-artifacts:
-  paths:
-  - build/cmake-hello_0.0.1-1_amd64.deb
-
 image: gitlab:builder
 
 #services:
@@ -13,3 +9,7 @@ before_script:
 test:
   script:
   - ./build.sh
+  artifacts:
+    paths:
+    - build/cmake-hello_0.0.1-1_amd64.deb
+    expire_in: 1 week
