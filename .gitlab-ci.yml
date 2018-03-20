@@ -1,4 +1,4 @@
-image: gitlab:builder
+#image: gitlab:builder
 
 #services:
 #  - postgres:9.3
@@ -6,7 +6,7 @@ image: gitlab:builder
 before_script:
   - docker inspect gitlab:builder || docker build --rm -t gitlab:builder .
 
-test:
+build:
   script:
   - ./build.sh
   artifacts:
